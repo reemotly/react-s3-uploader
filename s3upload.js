@@ -49,7 +49,7 @@ function S3Upload(options) {
 }
 
 function getFileMimeType(file) {
-    return mime.lookup(file.name);
+    return mime.lookup(file.name) || "application/octet-stream";
 }
 
 S3Upload.prototype.handleFileSelect = function(files) {
